@@ -535,6 +535,7 @@ func TestAppPinnedSastRequiredCheckNeedsReview(t *testing.T) {
 
 	result, message, _ := SastEnforcedOnChanges(payload)
 	assert.Equal(t, gemara.NeedsReview, result, message)
+	assert.Contains(t, message, "pinned to a GitHub App")
 }
 
 // TestAppPinnedSastCheckNeverFailsOnPinAlone guards the convention that Failed
